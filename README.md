@@ -1,7 +1,7 @@
 # Data Warehouse and Analytics Project
 
-Welcome to the **Data Warehouse and Analytics Project** repository! 🚀  
-This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio project, it highlights industry best practices in data engineering and analytics.
+A SQL Server-based modern data warehouse built using Medallion Architecture, with Bronze, Silver, and Gold layers for data integration, transformation, and analytics.
+
 
 ---
 ## 🏗️ Data Architecture
@@ -25,16 +25,43 @@ This project involves:
 
 ---
 
+## 🚀 How to Run
+
+### Prerequisites
+
+- SQL Server Express
+- SQL Server Management Studio (SSMS)
+
+### Setup
+
+1. Clone this repository.
+2. Open `scripts/init_database.sql` in SQL Server Management Studio.
+3. Execute the script to create the database and schemas.
+4. Run the Bronze layer DDL and loading procedure.
+5. Run the Silver layer DDL and loading procedure.
+6. Run the Gold layer DDL script.
+7. Execute the data quality checks in the `tests/` directory.
+
+### Data Pipeline
+
+CSV Source Files
+        ↓
+Bronze Layer
+        ↓
+Silver Layer
+        ↓
+Gold Layer
+        ↓
+Analytics & Reporting
+
+---
+
 ## 🛠️ Important Links & Tools:
 
-Everything is for Free!
-- **[Datasets](datasets/):** Access to the project dataset (csv files).
 - **[SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads):** Lightweight server for hosting your SQL database.
 - **[SQL Server Management Studio (SSMS)](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16):** GUI for managing and interacting with databases.
-- **[Git Repository](https://github.com/):** Set up a GitHub account and repository to manage, version, and collaborate on your code efficiently.
 - **[DrawIO](https://www.drawio.com/):** Design data architecture, models, flows, and diagrams.
-- **[Notion](https://www.notion.com/templates/sql-data-warehouse-project):** Get the Project Template from Notion
-- **[Notion Project Steps](https://thankful-pangolin-2ca.notion.site/SQL-Data-Warehouse-Project-16ed041640ef80489667cfe2f380b269?pvs=4):** Access to All Project Phases and Tasks.
+
 
 ---
 
@@ -64,20 +91,18 @@ Develop SQL-based analytics to deliver detailed insights into:
 
 These insights empower stakeholders with key business metrics, enabling strategic decision-making.  
 
-For more details, refer to [docs/requirements.md](docs/requirements.md).
 
 ## 📂 Repository Structure
 ```
-data-warehouse-project/
+sql-data-warehouse-project/
 │
 ├── datasets/                           # Raw datasets used for the project (ERP and CRM data)
 │
 ├── docs/                               # Project documentation and architecture details
-│   ├── etl.drawio                      # Draw.io file shows all different techniques and methods of ETL
-│   ├── data_architecture.drawio        # Draw.io file shows the project's architecture
+│   ├── data_architecture.png        # Shows the project's architecture
 │   ├── data_catalog.md                 # Catalog of datasets, including field descriptions and metadata
-│   ├── data_flow.drawio                # Draw.io file for the data flow diagram
-│   ├── data_models.drawio              # Draw.io file for data models (star schema)
+│   ├── data_flow.png                # For the data flow diagram
+│   ├── data_models.png              # For data models (star schema)
 │   ├── naming-conventions.md           # Consistent naming guidelines for tables, columns, and files
 │
 ├── scripts/                            # SQL scripts for ETL and transformations
@@ -89,8 +114,7 @@ data-warehouse-project/
 │
 ├── README.md                           # Project overview and instructions
 ├── LICENSE                             # License information for the repository
-├── .gitignore                          # Files and directories to be ignored by Git
-└── requirements.txt                    # Dependencies and requirements for the project
+└── .gitignore                          # Files and directories to be ignored by Git
 ```
 ---
 
